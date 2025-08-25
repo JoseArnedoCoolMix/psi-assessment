@@ -7,7 +7,7 @@ export const ContentReveal: React.FC<IBaseComponent> = ({
   className,
   children,
 }) => {
-  const [scope, animate] = useAnimate();
+  const [scope] = useAnimate();
   const isInView = useInView(scope, {
     amount: 1,
     margin: "1000px 0px 0px 0px",

@@ -1,6 +1,3 @@
-import Image from "next/image";
-import MainNav from "./MainComponents/MainNav";
-import MobileNav from "./MainComponents/MobileNav";
 import HomeComponent from "./Components/HomeMainComponent";
 
 export default function Home() {

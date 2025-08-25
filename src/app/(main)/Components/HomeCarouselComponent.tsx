@@ -52,7 +52,7 @@ const HomeCarousel = () => {
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
               priority={idx === 0}
-              sizes="100vw"
+              sizes="100dvh"
             />
             {/* Overlay for darkening image for text readability */}
             <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />

@@ -12,7 +12,7 @@ const MobileNav = () => {
         style={{ boxShadow: "0px 5px 20px 0px rgb(245 169 0 / 40%)" }}
       >
         <div
-          className={`px-4 py-4 rounded-full  hover:bg-[rgba(255,255,255,0.1)] cursor-pointer transition-all`}
+          className={`px-4 py-4 rounded-full ${activeIndex} hover:bg-[rgba(255,255,255,0.1)] cursor-pointer transition-all`}
           onClick={() => setActiveIndex(0)}
         >
           <FiMenu size={24} />

@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import HomeCarousel from "./HomeCarouselComponent";
 import IconFeatures from "./HomeIconRows";
 import CardRows from "./HomeCardRows";

@@ -1,5 +1,4 @@
 import React from "react";
-import { FiThumbsUp } from "react-icons/fi";
 import { ContentReveal } from "./Animation/ContentReveal";
 
 const DescriptionFeatures = () => {
