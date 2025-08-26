@@ -118,14 +118,6 @@ const HomeVideoComponent = () => {
                   background: "black",
                 }}
               />
-              {/* Mute/Unmute Button (right) */}
-              <button
-                onClick={() => setIsMuted((m) => !m)}
-                className="absolute bottom-7 right-7 bg-[rgba(255,255,255,0.7)] hover:bg-[rgba(255,255,255,0.9)] text-black px-3 py-3 rounded-full shadow-[0_0_6px_rgba(255,255,255,0.5)] hover:shadow-[0_0_10px_rgba(255,255,255,0.7)] transition duration-300 ease-in-out"
-                aria-label={isMuted ? "Unmute" : "Mute"}
-              >
-                {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-              </button>
             </div>
           </div>
         </div>
