@@ -12,7 +12,7 @@ const AMENITIES = [
   {
     title: "Living Room",
     body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
-    image: "Living.jpg",
+    image: "living.jpg",
   },
   {
     title: "Kitchen",
@@ -104,7 +104,7 @@ const CardRows = () => {
       <div className="flex w-full px-4 font-semibold md:font-normal md:px-0 p-0 md:p-5 justify-start md:justify-center">
         <TitleReveal>
           <h3 className="font-serif text-black pb-5 text-3xl md:text-6xl w-full px-0 md:px-5 text-left">
-            Luxuria Facilitas
+            Amenities
           </h3>
         </TitleReveal>
       </div>
@@ -116,7 +116,7 @@ const CardRows = () => {
         <p className="text-left font-sans">{AMENITIES[activeIndex].body}</p>
       </div>
       <div
-        className="flex gap-4 md:gap-8 overflow-x-auto w-full p-8 md:p-10 no-scrollbar"
+        className="flex gap-4 md:gap-8 overflow-x-auto w-full min-w-0 p-4 md:p-10 no-scrollbar"
         style={{
           scrollSnapType: "x mandatory",
           WebkitOverflowScrolling: "touch",
@@ -172,12 +172,12 @@ const CardRows = () => {
             <AnimatePresence>
               {index === activeIndex && (
                 <motion.div
-                  className="hidden md:flex absolute top-0 right-0 w-[280px] shrink-0 backdrop-blur-md h-full flex-col justify-end p-6 gap-2"
+                  className="hidden absolute top-0 right-0 w-[280px] shrink-0 backdrop-blur-md h-full md:flex flex-col justify-end p-6 gap-2"
                   style={{ background: "rgb(255 253 250 / 73%)" }}
-                  initial={{ opacity: 0, scaleY: 0 }}
-                  animate={{ opacity: 1, scaleY: 1 }}
-                  exit={{ opacity: 0, scaleY: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 0.4 }}
                 >
                   <h4 className="font-serif text-4xl text-black">
                     {src.title}

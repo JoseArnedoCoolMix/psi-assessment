@@ -4,6 +4,8 @@ import HomeCarousel from "./HomeCarouselComponent";
 import CardRows from "./HomeCardRows";
 import HomeSecondSliderSection from "./HomeSliderComponent";
 import HomeHighlight from "./HomeHighlight";
+import DescriptionFeatures from "./HomeDescriptiveComponent";
+import GetInquiry from "./HomeGetInquiry";
 
 const HomeComponent = () => {
   return (
@@ -12,7 +14,8 @@ const HomeComponent = () => {
       <HomeSecondSliderSection />
       <CardRows />
       <HomeHighlight />
-      {/* <DescriptionFeatures /> */}
+      <DescriptionFeatures />
+      <GetInquiry />
     </div>
   );
 };

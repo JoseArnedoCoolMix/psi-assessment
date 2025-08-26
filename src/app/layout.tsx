@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import MainNav from "./(main)/MainComponents/MainNav";
 import MobileNav from "./(main)/MainComponents/MobileNav";
+import Footer from "./(main)/MainComponents/Footer";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({
         <MainNav />
         <MobileNav />
         {children}
+        <Footer />
       </body>
     </html>
   );

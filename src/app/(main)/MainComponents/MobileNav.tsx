@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
+import Link from "next/link";
 
 const MobileNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,28 +50,35 @@ const MobileNav = () => {
       >
         <div className="flex flex-col h-full p-8 text-white justify-center">
           <nav className="flex flex-col gap-6 text-2xl">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="hover:text-neutral-300 active:text-neutral-500 pl-5 transition"
+              onClick={() => setMenuOpen(false)}
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            {/* <Link
+              href="/gallery"
               className="hover:text-neutral-300 active:text-neutral-500 pl-5 transition"
+              onClick={() => setMenuOpen(false)}
             >
               Gallery
-            </a>
-            <a
-              href="#"
+            </Link> */}
+            <Link
+              href="/plan"
               className="hover:text-neutral-300 active:text-neutral-500 pl-5 transition"
+              onClick={() => setMenuOpen(false)}
             >
               Plan
-            </a>
+            </Link>
             <div className="w-auto flex">
-              <div className="px-6 py-3 rounded-full cursor-pointer transition-all font-sans bg-neutral-200 text-black hover:bg-[#e2d9c4]">
+              <Link
+                href="/inquire"
+                className="px-6 py-3 rounded-full cursor-pointer transition-all font-sans bg-neutral-200 text-black hover:bg-[#e2d9c4]"
+                onClick={() => setMenuOpen(false)}
+              >
                 Inquire
-              </div>
+              </Link>
             </div>
           </nav>
         </div>

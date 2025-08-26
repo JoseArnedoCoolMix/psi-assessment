@@ -1,14 +1,26 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const navItems = ["Home", "Gallery", "Plan"];
+const navItems = [
+  { label: "Home", href: "/" },
+  //   { label: "Gallery", href: "/gallery" },
+  { label: "Plan", href: "/plan" },
+];
 
 const MainNav = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   const navRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const pathname = usePathname();
+
+  // Find active index based on current URL
+  const activeIndex = navItems.findIndex((item) =>
+    item.href === "/" ? pathname === "/" : pathname.startsWith(item.href)
+  );
+
+  const [hoverIndex, setHoverIndex] = React.useState<number | null>(null);
 
   const getBubbleStyle = () => {
     const idx = hoverIndex !== null ? hoverIndex : activeIndex;
@@ -52,7 +64,7 @@ const MainNav = () => {
           />
           {navItems.map((item, idx) => (
             <div
-              key={item}
+              key={item.label}
               className="relative"
               ref={(el) => {
                 navRefs.current[idx] = el;
@@ -60,14 +72,14 @@ const MainNav = () => {
               onMouseEnter={() => setHoverIndex(idx)}
               onMouseLeave={() => setHoverIndex(null)}
             >
-              <div
-                className={`relative px-6 py-3 rounded-full cursor-pointer transition-all font-sans z-10 ${
+              <Link
+                className={`relative px-6 py-3 rounded-full cursor-pointer transition-all flex font-sans z-10 ${
                   activeIndex === idx ? "text-neutral-900" : "text-neutral-200"
                 }`}
-                onClick={() => setActiveIndex(idx)}
+                href={item.href}
               >
-                {item}
-              </div>
+                {item.label}
+              </Link>
               {/* Static active bubble */}
               {activeIndex === idx && (
                 <div className="absolute inset-0 rounded-full bg-neutral-200 z-0" />
@@ -75,9 +87,12 @@ const MainNav = () => {
             </div>
           ))}
         </div>
-        <div className="px-6 py-3 ml-3 rounded-full cursor-pointer transition-all font-sans bg-neutral-200 text-black hover:bg-[#e2d9c4]">
+        <Link
+          className="px-6 py-3 ml-3 rounded-full cursor-pointer transition-all font-sans bg-neutral-200 text-black hover:bg-[#e2d9c4]"
+          href="/inquire"
+        >
           Inquire
-        </div>
+        </Link>
       </div>
     </nav>
   );

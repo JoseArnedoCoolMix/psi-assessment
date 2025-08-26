@@ -86,7 +86,15 @@ const HomeCarousel = () => {
               src={src}
               alt={`Slide ${idx + 1}`}
               fill
-              style={{ objectFit: "cover", objectPosition: "center" }}
+              // Move the first image to the right on mobile using objectPosition
+              style={{
+                objectFit: "cover",
+                objectPosition:
+                  idx === 0
+                    ? "35% center" // move subject to the right on mobile
+                    : "center",
+              }}
+              className={idx === 0 ? "md:object-center" : ""}
               priority={idx === 0}
               sizes="100vw"
             />
@@ -112,6 +120,13 @@ const HomeCarousel = () => {
                     {overlays[idx].body}
                   </div>
                 </div>
+                {idx === 0 && (
+                  <div className="flex w-auto justify-end">
+                    <div className="px-6 py-3 ml-3 rounded-full cursor-pointer transition-all font-sans bg-neutral-200 text-black hover:bg-[#e2d9c4]">
+                      Grab a brochure
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
