@@ -48,7 +48,7 @@ const MainNav = () => {
             src="/images/logo-dark.png"
             alt="Logo"
             width={50}
-            height={100}
+            height={30}
           />
         </div>
         <div className="relative flex">
