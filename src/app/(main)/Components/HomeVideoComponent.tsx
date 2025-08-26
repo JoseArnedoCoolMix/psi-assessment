@@ -26,6 +26,8 @@ const HomeVideoComponent = () => {
     }
   });
 
+  // comment
+
   const dynamicBorderRadius = useCallback(() => {
     if (scrollYPercent >= 70 && scrollYPercent <= 100) {
       return 25 - (scrollYPercent - 70) * (25 / 30);
