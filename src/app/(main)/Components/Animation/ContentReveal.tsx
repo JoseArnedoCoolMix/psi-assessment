@@ -1,15 +1,19 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import { AnimatePresence, motion, useAnimate, useInView } from "framer-motion";
-import { IBaseComponent } from "@/types/common";
 
-export const ContentReveal: React.FC<IBaseComponent> = ({
+interface ContentRevealProps {
+  className?: string;
+  children: ReactNode;
+}
+
+export const ContentReveal: React.FC<ContentRevealProps> = ({
   className,
   children,
 }) => {
   const [scope] = useAnimate();
   const isInView = useInView(scope, {
-    amount: 1,
+    amount: 0.2,
     margin: "1000px 0px 0px 0px",
   });
 
@@ -17,13 +21,15 @@ export const ContentReveal: React.FC<IBaseComponent> = ({
     <AnimatePresence>
       <motion.div
         ref={scope}
-        className={`${className ? className : ""}`}
+        className={className ? className : ""}
         variants={{
           hidden: {
             opacity: 0,
+            y: 50,
           },
           visible: {
             opacity: 1,
+            y: 0,
           },
         }}
         initial="hidden"

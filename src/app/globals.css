@@ -32,3 +32,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.content-section {
+  @apply w-full max-w-[1425px] px-[24px] xl:px-[64px] 2xl:px-[20px];
+}

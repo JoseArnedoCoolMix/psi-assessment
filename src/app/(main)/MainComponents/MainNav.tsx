@@ -1,60 +1,82 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+const navItems = ["Home", "Gallery", "Plan"];
 
 const MainNav = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const navRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const getBubbleStyle = () => {
+    const idx = hoverIndex !== null ? hoverIndex : activeIndex;
+    const node = navRefs.current[idx];
+    if (node) {
+      const { offsetLeft, offsetTop, offsetWidth, offsetHeight } = node;
+      return {
+        left: offsetLeft,
+        top: offsetTop,
+        width: offsetWidth,
+        height: offsetHeight,
+      };
+    }
+    return { left: 0, top: 0, width: 0, height: 0 };
+  };
 
   return (
-    <nav
-      className={`fixed top-4 w-full bg-none hidden md:flex justify-center z-10 `}
-    >
+    <nav className="fixed top-4 w-full bg-none hidden md:flex justify-center font-sans z-50">
       <div
-        className="flex rounded-[99px] p-[2px] border border-amber-400 bg-[rgba(255,255,255,0.1)] backdrop-blur-md "
-        style={{ boxShadow: "0px 5px 20px 0px rgb(245 169 0 / 40%)" }}
+        className="flex rounded-[99px] p-[2px] border border-neutral-300 bg-[rgba(0,0,0,0.25)] backdrop-blur-md relative"
+        style={{ boxShadow: "0px 5px 20px 0px rgb(120 120 120 / 20%)" }}
       >
-        <div>
-          <Image src="/images/logo.png" alt="Logo" width={50} height={50} />
+        <div className="flex h-full items-center justify-center px-4 mr-3">
+          <Image
+            src="/images/logo-dark.png"
+            alt="Logo"
+            width={50}
+            height={100}
+          />
         </div>
-        <div
-          className={`px-6 py-3 rounded-full  hover:bg-[rgba(255,255,255,0.1)] cursor-pointer transition-all  ${
-            activeIndex === 0
-              ? "bg-gradient-to-r from-[#dac08a] to-[#FBFCDB] text-black"
-              : ""
-          }`}
-          onClick={() => setActiveIndex(0)}
-        >
-          Home
+        <div className="relative flex">
+          {/* Moving translucent bubble */}
+          <motion.div
+            className="absolute rounded-full bg-neutral-200/40 pointer-events-none"
+            style={{
+              zIndex: 1,
+              ...getBubbleStyle(),
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            animate={getBubbleStyle()}
+          />
+          {navItems.map((item, idx) => (
+            <div
+              key={item}
+              className="relative"
+              ref={(el) => {
+                navRefs.current[idx] = el;
+              }}
+              onMouseEnter={() => setHoverIndex(idx)}
+              onMouseLeave={() => setHoverIndex(null)}
+            >
+              <div
+                className={`relative px-6 py-3 rounded-full cursor-pointer transition-all font-sans z-10 ${
+                  activeIndex === idx ? "text-neutral-900" : "text-neutral-200"
+                }`}
+                onClick={() => setActiveIndex(idx)}
+              >
+                {item}
+              </div>
+              {/* Static active bubble */}
+              {activeIndex === idx && (
+                <div className="absolute inset-0 rounded-full bg-neutral-200 z-0" />
+              )}
+            </div>
+          ))}
         </div>
-        <div
-          className={`px-6 py-3 rounded-full  hover:bg-[rgba(255,255,255,0.1)] cursor-pointer transition-all  ${
-            activeIndex === 1
-              ? "bg-gradient-to-r from-[#dac08a] to-[#FBFCDB] text-black"
-              : ""
-          }`}
-          onClick={() => setActiveIndex(1)}
-        >
-          About Us
-        </div>
-        <div
-          className={`px-6 py-3 rounded-full  hover:bg-[rgba(255,255,255,0.1)] cursor-pointer transition-all  ${
-            activeIndex === 2
-              ? "bg-gradient-to-r from-[#dac08a] to-[#FBFCDB] text-black"
-              : ""
-          }`}
-          onClick={() => setActiveIndex(2)}
-        >
-          Contact Us
-        </div>
-        <div
-          className={`px-6 py-3 rounded-full  hover:bg-[rgba(255,255,255,0.1)] cursor-pointer transition-all  ${
-            activeIndex === 3
-              ? "bg-gradient-to-r from-[#dac08a] to-[#FBFCDB] text-black"
-              : ""
-          }`}
-          onClick={() => setActiveIndex(3)}
-        >
-          Careers
+        <div className="px-6 py-3 ml-3 rounded-full cursor-pointer transition-all font-sans bg-neutral-200 text-black hover:bg-[#e2d9c4]">
+          Inquire
         </div>
       </div>
     </nav>
