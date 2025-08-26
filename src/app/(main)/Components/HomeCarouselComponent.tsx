@@ -122,9 +122,13 @@ const HomeCarousel = () => {
                 </div>
                 {idx === 0 && (
                   <div className="flex w-auto justify-end">
-                    <div className="px-6 py-3 ml-3 rounded-full cursor-pointer transition-all font-sans bg-neutral-200 text-black hover:bg-[#e2d9c4]">
+                    <a
+                      href="/brochure.pdf"
+                      download
+                      className="w-48 px-4 py-3 ml-3 rounded-full cursor-pointer transition-all font-sans border border-neutral-100 hover:border-[#e2d9c4] hover:bg-[rgba(255,255,255,0.2)] text-center block"
+                    >
                       Grab a brochure
-                    </div>
+                    </a>
                   </div>
                 )}
               </div>
