@@ -101,19 +101,19 @@ const PlanComponent = () => {
         {paymentPlans.map((plan, idx) => (
           <div
             key={idx}
-            className={`flex-1 bg-white/80 backdrop-blur-md rounded-2xl md:rounded-3xl transition-all shadow-lg border border-neutral-200 p-4 md:p-8 flex flex-col items-center min-w-[90vw] md:min-w-[260px] max-w-full md:max-w-md ${
+            className={`flex-1 bg-black/10 backdrop-blur-md rounded-2xl md:rounded-3xl transition-all shadow-lg border border-neutral-200 p-4 md:p-8 flex flex-col items-center min-w-[90vw] md:min-w-[260px] max-w-full md:max-w-md ${
               idx === 1
                 ? "scale-100 md:scale-105 md:hover:scale-110"
                 : "md:hover:scale-105"
             }`}
           >
-            <h3 className="text-xl md:text-3xl mb-5 md:mb-7 text-center font-serif text-black">
+            <h3 className="text-xl md:text-3xl mb-5 md:mb-7 text-center font-serif text-white">
               {plan.title}
               <br />
               PAYMENT PLAN
             </h3>
             {/* Downpayment */}
-            <div className="mb-2 md:mb-4 w-full flex flex-col items-center text-black">
+            <div className="mb-2 md:mb-4 w-full flex flex-col items-center text-white">
               <div className="text-2xl md:text-3xl font-serif">
                 {plan.downpayment}
               </div>
@@ -127,7 +127,7 @@ const PlanComponent = () => {
               if (quarters.length === 0) return null;
               return (
                 <div key={year} className="w-full mb-2 md:mb-4 mt-2 md:mt-4">
-                  <div className="mb-1 md:mb-2 text-center font-serif text-lg md:text-2xl text-black">
+                  <div className="mb-1 md:mb-2 text-center font-serif text-lg md:text-2xl text-white">
                     {yearLabel(year)}
                   </div>
                   <div className="grid grid-cols-4 gap-2 md:gap-3">
@@ -135,7 +135,7 @@ const PlanComponent = () => {
                       ? quarters.map((q, i) => (
                           <div
                             key={i}
-                            className="mb-2 md:mb-4 w-full flex flex-col items-center text-black col-span-2"
+                            className="mb-2 md:mb-4 w-full flex flex-col items-center text-white col-span-2"
                           >
                             <div className="text-lg md:text-3xl font-serif">
                               {q.value}
@@ -148,7 +148,7 @@ const PlanComponent = () => {
                       : quarters.map((q, i) => (
                           <div
                             key={i}
-                            className="mb-2 md:mb-4 w-full flex flex-col items-center text-black"
+                            className="mb-2 md:mb-4 w-full flex flex-col items-center text-white"
                           >
                             <div className="text-lg md:text-3xl font-serif">
                               {q.value}
@@ -164,10 +164,10 @@ const PlanComponent = () => {
             })}
             {/* Handover */}
             <div className="mt-2 w-full flex flex-col items-center">
-              <div className="mb-1 md:mb-2 text-center font-serif text-lg md:text-2xl text-black">
+              <div className="mb-1 md:mb-2 text-center font-serif text-lg md:text-2xl text-white">
                 HANDOVER
               </div>
-              <div className="text-lg md:text-3xl font-serif text-black">
+              <div className="text-lg md:text-3xl font-serif text-white">
                 {plan.handover}
               </div>
             </div>

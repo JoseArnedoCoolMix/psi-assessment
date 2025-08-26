@@ -85,15 +85,14 @@ const HomeHighlight = () => {
                 Indoor
               </h5>
               <h3 className="text-xl md:text-3xl font-serif font-semibold mb-3 text-left md:text-right">
-                Something Good About This
+                Exquisite Design & Comfort
               </h3>
             </TitleReveal>
             <ContentReveal>
               <p className="text-md md:text-xl text-left md:text-right">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                malesuada. Nunc congue urna id laoreet tempor. Nunc rhoncus nec
-                ante eu dapibus. Sed egestas neque vel vehicula ullamcorper.
-                Phasellus quis accumsan turpis, et aliquet lectus feugiat a.
+                Experience the perfect blend of luxury and comfort in our indoor
+                spaces, designed to elevate your living experience. Embrace the
+                tranquility and elegance that our interiors offer.
               </p>
             </ContentReveal>
           </div>
@@ -158,15 +157,14 @@ const HomeHighlight = () => {
             <TitleReveal>
               <h5 className="text-xl md:text-3xl font-serif italic">Outdoor</h5>
               <h3 className="text-xl md:text-3xl font-serif font-semibold mb-3">
-                Something Good About This
+                Experience Blissful Serenity
               </h3>
             </TitleReveal>
             <ContentReveal>
               <p className="text-md md:text-xl text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                malesuada. Nunc congue urna id laoreet tempor. Nunc rhoncus nec
-                ante eu dapibus. Sed egestas neque vel vehicula ullamcorper.
-                Phasellus quis accumsan turpis, et aliquet lectus feugiat a.
+                Discover the beauty of nature with our outdoor spaces, designed
+                for relaxation and rejuvenation. Highlighting the perfect
+                harmony between modern living and the serene outdoors.
               </p>
             </ContentReveal>
           </div>

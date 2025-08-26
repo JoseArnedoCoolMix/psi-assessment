@@ -6,6 +6,7 @@ import HomeSecondSliderSection from "./HomeSliderComponent";
 import HomeHighlight from "./HomeHighlight";
 import DescriptionFeatures from "./HomeDescriptiveComponent";
 import GetInquiry from "./HomeGetInquiry";
+import HomeVideoComponent from "./HomeVideoComponent";
 
 const HomeComponent = () => {
   return (
@@ -13,6 +14,9 @@ const HomeComponent = () => {
       <HomeCarousel />
       <HomeSecondSliderSection />
       <CardRows />
+      <div className="w-full flex flex-col items-center">
+        <HomeVideoComponent />
+      </div>
       <HomeHighlight />
       <DescriptionFeatures />
       <GetInquiry />

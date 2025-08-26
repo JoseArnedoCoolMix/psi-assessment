@@ -4,49 +4,49 @@ import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
 const AMENITIES = [
-  {
-    title: "Bedroom",
-    body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
-    image: "bedroom.jpg",
-  },
-  {
-    title: "Living Room",
-    body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
-    image: "living.jpg",
-  },
-  {
-    title: "Kitchen",
-    body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
-    image: "kitchen.jpg",
-  },
+  // {
+  //   title: "Bedroom",
+  //   body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
+  //   image: "bedroom.jpg",
+  // },
+  // {
+  //   title: "Living Room",
+  //   body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
+  //   image: "living.jpg",
+  // },
+  // {
+  //   title: "Kitchen",
+  //   body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
+  //   image: "kitchen.jpg",
+  // },
   {
     title: "Cinematic Experience",
-    body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
+    body: "Experience the magic of exclusive private cinema, where plush surroundings and cutting-edge technology come together for a night of cinematic grandeur.",
     image: "cinema.jpg",
   },
   {
-    title: "Pool",
-    body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
+    title: "Tropical Escape",
+    body: " Dive into tranquility at our Sandy Pool, an oasis of relaxation designed for both leisure and social gatherings.",
     image: "pool.jpg",
   },
   {
-    title: "Spa",
-    body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
+    title: "Spa Retreat",
+    body: "Elevate your wellness journey in our opulent spa, where world-class therapeutic treatments await. Rejuvenate your body, mind, and spirit in an atmosphere of unrivaled tranquility and indulgence.",
     image: "spa.jpg",
   },
   {
-    title: "Gaming",
-    body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
+    title: "Ultimate Gaming Room",
+    body: "A perfect space to relax and have fun with friends and family, the Gaming Room combines stylish design with the latest entertainment options.",
     image: "gaming.jpg",
   },
   {
-    title: "Wall",
-    body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
+    title: "Fitness Studio",
+    body: "Achieve your fitness goals in our premium gyms, fully equipped with cutting-edge technology and personalized training services, set in an inspiring and dynamic space.",
     image: "wall.jpg",
   },
   {
-    title: "Kids Area",
-    body: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada. Nunc congue urna id laoreet tempor.",
+    title: "Kids' Play Haven",
+    body: "Delight your children with a vibrant, secure play haven that inspires creativity, learning, and exploration in an enchanting environment designed for their joy and safety.",
     image: "kids.jpg",
   },
 ];
@@ -179,10 +179,10 @@ const CardRows = () => {
                   exit={{ opacity: 0, x: 50 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <h4 className="font-serif text-4xl text-black">
+                  <h4 className="font-serif text-3xl italic text-black">
                     {src.title}
                   </h4>
-                  <p className="font-sans text-lg text-black">{src.body}</p>
+                  <p className="font-sans text-md text-black">{src.body}</p>
                 </motion.div>
               )}
             </AnimatePresence>

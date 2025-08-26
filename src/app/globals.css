@@ -36,3 +36,9 @@ body {
 .content-section {
   @apply w-full max-w-[1425px] px-[24px] xl:px-[64px] 2xl:px-[20px];
 }
+
+.scroll-container-max-size {
+  width: min(100vw, calc(100vh * (16 / 9)));
+  height: min(calc(100vw * (9 / 16)), 100vh);
+  aspect-ratio: 16 / 9;
+}

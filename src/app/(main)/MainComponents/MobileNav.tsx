@@ -57,13 +57,13 @@ const MobileNav = () => {
             >
               Home
             </Link>
-            {/* <Link
+            <Link
               href="/gallery"
               className="hover:text-neutral-300 active:text-neutral-500 pl-5 transition"
               onClick={() => setMenuOpen(false)}
             >
               Gallery
-            </Link> */}
+            </Link>
             <Link
               href="/plan"
               className="hover:text-neutral-300 active:text-neutral-500 pl-5 transition"
