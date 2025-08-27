@@ -43,17 +43,17 @@ const LOCATION = [
   },
   {
     icon: <LuSchool size={32} />,
-    time: 9,
+    time: 3,
     text: "to Repton School",
   },
   {
     icon: <TbHospital size={32} />,
-    time: 9,
+    time: 5,
     text: "to Kings College Hospital",
   },
   {
     icon: <PiParkDuotone size={32} />,
-    time: 9,
+    time: 3,
     text: "to Nearest Park",
   },
 ];
