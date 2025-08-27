@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 const YOUTUBE_EMBED_URL =
   "https://www.youtube.com/embed/8LM-hPSBu0M?enablejsapi=1&rel=0&modestbranding=1&playsinline=1";
@@ -10,7 +9,6 @@ const HomeVideoComponent = () => {
   const videoPlayerDiv = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [scrollYPercent, setScrollYPercent] = useState(100);
-  const [isMuted, setIsMuted] = useState(true);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -73,14 +71,6 @@ const HomeVideoComponent = () => {
       }
     };
   }, []);
-
-  useEffect(() => {
-    if (isMuted) {
-      postMessageToIframe("mute");
-    } else {
-      postMessageToIframe("unMute");
-    }
-  }, [isMuted]);
 
   return (
     <div

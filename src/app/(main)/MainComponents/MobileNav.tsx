@@ -15,7 +15,7 @@ const MobileNav = () => {
           className="flex rounded-[99px] p-[2px] border border-neutral-300 bg-[rgba(0,0,0,0.25)] backdrop-blur-md relative"
           style={{ boxShadow: "0px 5px 20px 0px rgb(255, 255, 255 / 40%)" }}
         >
-          <div className="px-4 py-2 rounded-full flex items-center">
+          <Link href="/" className="px-4 py-2 rounded-full flex items-center">
             <Image
               src="/images/logo-dark.png"
               alt="Logo"
@@ -24,7 +24,7 @@ const MobileNav = () => {
               className="object-contain"
               priority
             />
-          </div>
+          </Link>
         </div>
         {/* Menu button on the right */}
         <div

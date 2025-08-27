@@ -1,6 +1,7 @@
 import React from "react";
 import { ContentReveal } from "./Animation/ContentReveal";
 import { TitleReveal } from "./Animation/TitleReveal";
+import Link from "next/link";
 
 const GetInquiryLight = () => {
   return (
@@ -25,9 +26,12 @@ const GetInquiryLight = () => {
         </div>
 
         <div className="flex w-auto justify-center items-center md:items-end flex-col gap-3">
-          <div className="w-48 px-6 py-3 ml-3 rounded-full cursor-pointer transition-all font-sans bg-neutral-100 text-black hover:bg-[#e2d9c4] text-center">
+          <Link
+            className="w-48 px-6 py-3 ml-3 rounded-full cursor-pointer transition-all font-sans bg-neutral-100 text-black hover:bg-[#e2d9c4] text-center"
+            href="/inquire"
+          >
             Inquire Now
-          </div>
+          </Link>
           <div>
             <a
               href="/brochure.pdf"
